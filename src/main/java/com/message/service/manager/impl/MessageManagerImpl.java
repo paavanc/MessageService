@@ -13,24 +13,28 @@ import com.message.service.vo.Digest;
 public class MessageManagerImpl implements MessageManager {
 	@Autowired
 	MessageRepository messageRepository;
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.message.manager.impl.MessageManager#save(com.message.entity.Message)
 	 */
 	@Override
 	public Digest save(Message m) {
-		
+
 		m.setDigest(DigestUtils.sha256Hex(m.getMessage()));
-		
+
 		return new Digest(messageRepository.save(m));
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.message.manager.impl.MessageManager#findByDigest(java.lang.String)
 	 */
 	@Override
 	public Message findByDigest(String digest) {
-		Optional<Message>  messages = messageRepository.findById( digest);
+		Optional<Message> messages = messageRepository.findById(digest);
 		if (!messages.isPresent()) {
 			return null;
 		}

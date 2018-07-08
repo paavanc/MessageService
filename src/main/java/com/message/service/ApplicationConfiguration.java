@@ -9,17 +9,16 @@ import org.springframework.data.keyvalue.core.KeyValueOperations;
 import org.springframework.data.keyvalue.core.KeyValueTemplate;
 import org.springframework.data.map.MapKeyValueAdapter;
 
-
 @Configuration
 public class ApplicationConfiguration {
-    @Bean("keyValueTemplate")
-    public KeyValueOperations keyValueTemplate() {
-        return new KeyValueTemplate(keyValueAdapter());
+	@Bean("keyValueTemplate")
+	public KeyValueOperations keyValueTemplate() {
+		return new KeyValueTemplate(keyValueAdapter());
 
-    }
+	}
 
-    @Bean
-    public KeyValueAdapter keyValueAdapter() {
-        return new MapKeyValueAdapter(ConcurrentHashMap.class);
-    }
+	@Bean
+	public KeyValueAdapter keyValueAdapter() {
+		return new MapKeyValueAdapter(ConcurrentHashMap.class);
+	}
 }

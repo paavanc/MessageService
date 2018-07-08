@@ -8,7 +8,7 @@ import com.message.service.manager.impl.MessageManagerImpl;
 
 @Configuration
 public class BeanConfig {
-	
+
 	@Bean
 	public MessageManager getMessageManager() {
 		return new MessageManagerImpl();
