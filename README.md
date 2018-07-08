@@ -85,7 +85,7 @@ curl -X GET \
 
 #### Performance:
 
-Currently we are running one instance of the app in Heroku. The app relies on an internal memory key value store (Concurrent HashMap). The look up time for finding a message is O(1) with the key being the hash. However, there are pitfalls with this approach. One of them is that the in memory database goes down(clears out) everytime the service goes down or is put to sleep by Heroku.  
+Currently we are running one instance of the app in Heroku. The app relies on an internal memory key value store (Concurrent HashMap). The look up time for finding a message is O(1) with the key being the hash. However, there are pitfalls with this approach. One of them is that the in memory database goes down (clears out) everytime the service goes down or is put to sleep by Heroku.  
 
 If I was building this app to scale, I would probably set up a Redis Database and allocate more nodes to the service.  
 I would also increase the number of replicas on each on node depending on the traffic. I would use tools such as Kubernetes and AWS in order to achieve this. I would also need to set a limit on the size of the hash, as longer keys may cause look up performance issues, as more keys get added to the Redis Database.
