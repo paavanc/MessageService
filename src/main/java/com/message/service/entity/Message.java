@@ -15,6 +15,9 @@ public class Message implements Serializable{
 	public Message() {
 		
 	}
+	public Message(String message) {
+		this.message = message;
+	}
 
 	/**
 	 * 
