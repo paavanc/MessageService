@@ -63,3 +63,7 @@ If I was building this app to scale, I would probably set up a Redis Database an
 I would also increase the number of replicas on each on node depending on the traffic.  I would use tools such as Kubernetes and AWS
 in order to achieve this. I would also probably need to set a limit on the size of the hash, as longer keys may cause look up perfromance issues, 
 as more keys get added to the Reddis Database.
+
+ImportantFiles:
+/src/main/java/com/message/service - controllers, managers, repositories
+/src/test/java/com/message/service/ServiceApplicationTests.java - integration tests
