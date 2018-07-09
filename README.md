@@ -20,6 +20,8 @@ Pre-req: Java8 and Maven3
 3. Install Maven: 
 
 	```brew install maven```
+	
+4. Run the project:
 
 	In the terminal, run the following command in the MessageService directory.
 
@@ -27,7 +29,7 @@ Pre-req: Java8 and Maven3
 
 	The service should be running on port:9080.
 
-2. Run tests: ```mvn package```
+5. Run tests: ```mvn package```
 
    * This command will run the tests and package the project into a jar.
 
